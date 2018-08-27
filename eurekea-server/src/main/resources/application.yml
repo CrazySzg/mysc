@@ -1,0 +1,26 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false #保证注册中可以将不正确的实例正确剔除
+server:
+  port: 1111
+endpoints:
+  restart:
+    enabled: true
+management:
+  security:
+    enabled: false
+    roles:
+    - admin
+security:
+  user:
+    name: xuezhiqiang
+    password: 123456
+  basic:
+    enabled: true

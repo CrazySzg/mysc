@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          defaultBrokerPort: 9092
+          zkNodes: localhost:2181
+          defaultZkPort: 2181
+  kafka:
+    bootstrap-servers:
+    - localhost:9092
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test-consumer-group
+ #     auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xuezhiqiang:123456@localhost:1111/eureka/        
+server:
+  port: 6666        
+        

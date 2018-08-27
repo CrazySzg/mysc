@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@gitlab.sz.sensetime.com:xuezhiqiang/my-config.git
+          search-paths: learn-sc/
+          clone-on-start: true
+          private-key: 
+                      -----BEGIN RSA PRIVATE KEY-----
+            MIIEpAIBAAKCAQEAvpleNgnEDQQ0hFFWK2rVB/2OFfrfVRFM0sgcuAz2Bjz+SzOp
+            jpiVyvLoShidanktFLutrzvHZBShaCHlFTZ9HQ5XgBRbOz2Z2nr0C1hvyWxM7MWA
+            ZMme/hR7H5o6FMUVyhcflcto6A7vbpvKpPHK+fW06JryoRs3kj1Jf1laL54zshOC
+            lirBdIoaL3JlPwvm+APv3JzH64lSuFGQpRoHWfvqt+El2g2b3rX2aTwldr62FE6X
+            54cz56ZfAKInXsDN32hJsWknDiOIO38qhGI0LoaNxsuvfhcOFXR7Go6qbW9HY2P3
+            uKlGaOoUQOWA4ySgjekmv2D2t395iKFEm9MvswIDAQABAoIBADE/o85Gu7e5THCc
+            K63QTvdfluUrC6YJcFZOis0r3C5EeFiqIrfLyXjFRyxOK+6lHPbsf7Z1tdGwWvxz
+            NaRDjhSB7i4UFHa8NhL0DjcYRNpA96d+aOyiBEkWtbG2wic3vaeYTfsAsjy0Dz3/
+            V19DcvUfff1UfDkQtU0+NM2JIvqGbe/NmKr0tBy6Nc1CrQzPZmK2uAsMOmt4HhzY
+            y/ryO2ygiir34+It10mrJiT0ZPxaV9S0Zx1L1zl1xh9N6+trkArFXe/wZCXCX6Wt
+            NpY7BfvhWpcpHlKZTBm/OUnjW5uvmZX3/7r8rr8OnUBLPxc175VXpTffQmyrVuXa
+            ANf55XECgYEA6jKTlO3aACcuqP+PJaGJeF4cqesWiE+rkYVSI27qqCkO+dmqaM67
+            AHINqliNo0Sy93AHgVQ7YZoLQjVxkaPK7q9N2pz05gIpu4ddz/fluTaG6eoVJRAv
+            6eRj3SaDB9vbvxvY+xDVySkIMJK/6qff9SLjkSLA///qNlabs3zBvU0CgYEA0Fe/
+            ai/t1xR68GTSbuFhXfhfBdGIGdHT38hQmFxmHzNnxhfHyxJ+F9lYgnyVFPHtckhM
+            l/xg8qpKmlfu5VlenTXEIeZ97ZDKVu/7jlHOUsXRhkjWgclPI6lw1uY34GIuA51b
+            MJ1byvUe7eLPCINVQbJy2GiFzlL+o1riyTzmIP8CgYAcAlyALUorRoRgFeBq4bzt
+            NmQ7NjCFsPGV/9no/vT1k6OE4jFtQ3w9+2YC/4BBDJBS44UiRI6th5zdGEMy5eH5
+            VeH7yVXIxG11TiU8ICvLUOglxactvZfdY0FGS7rUD8liO9Rhgovu+QdPt91YFSfF
+            y5xn2T4338WFJiqM9ti86QKBgQCNWftUYBBNzGdckgrzj5Yv20Mc/3wHiITnX1DP
+            DmF66bWOgLPc4z8JjzytyziabUlcMBFHTMO54C+dZ+t9T5URtFjNZ0Qo2gNt2IQj
+            mv0Qy4XMRb7Db4FyAJO+OZPPeM0fRrOH2DtfB89kNm2gqPo/CINCsCeYRFbfHdqg
+            DeFUoQKBgQC8PaxDS9JWuUsCtSEsMr1JpwKvNm0V2ZMzlXc0JlaH1rve1pnLvRML
+            LSUTnKWnN60RnICdbfDxVotzFc32UA4ltex5S8DYSksB/qscIMGq0CEHrwx1qdal
+            lyXub3BD57wRRd8C+zOxeFbOH9sBrvtnIT+obtxe56G/M7DaTGdBOw==
+            -----END RSA PRIVATE KEY-----
+          force-pull: true
+          preferred-authentications: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xuezhiqiang:123456@localhost:1111/eureka
+server:
+  port: 7001
+security:
+  basic:
+    enabled: true
+  user:
+    name: xuezhiqiang
+    password: 123456
+management:
+  security:
+    enabled: false

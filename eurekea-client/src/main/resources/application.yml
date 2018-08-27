@@ -1,0 +1,32 @@
+#指定服务名
+spring:
+  application:
+    name: hello-service
+  profiles:
+    active:
+    - client1
+#指定服务注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: 
+         http://xuezhiqiang:123456@localhost:1111/eureka
+server:
+  port: 8081 
+management:
+  security:
+    enabled: false
+endpoints:
+  restart:
+    enabled: true
+---
+spring:
+  profiles: client2
+server:
+  port: 8082
+management:
+  security:
+    enabled: false
+endpoints:
+  restart:
+    enabled: true

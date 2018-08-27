@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: xzq-client-config
+  cloud:
+    config:
+      #客户端在服务端搜索配置时的名称，可以与spring.application.name不一致
+      name: xzq 
+      profile: dev
+      label: master
+#      uri: http://localhost:7001/
+      username: xuezhiqiang
+      password: 123456
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xuezhiqiang:123456@localhost:1111/eureka/
+server:
+  port: 7002
